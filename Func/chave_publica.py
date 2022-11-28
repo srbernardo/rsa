@@ -1,3 +1,5 @@
+import math
+
 def chavePublica():
     def mdc(a,b):
         while(True):
@@ -9,18 +11,14 @@ def chavePublica():
                 b = temp
 
     def primo(numero):
-        count = 0  
         if(numero < 0):
             return False
-        for i in range(2,numero + 1):
-            if(numero % i == 0):
-                count += 1
+        raiz = int(math.sqrt(numero))
+        for i in range(2,raiz + 1):
+            if numero % i == 0:
+                return False
+        return True
 
-        if(count == 1):
-            return True
-        else:
-            return False 
-    
     while True: 
         p = int(input("Digite um número primo P: "))
         q = int(input("Digite um número primo Q: "))
